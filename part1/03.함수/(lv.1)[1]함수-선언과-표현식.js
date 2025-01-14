@@ -7,10 +7,11 @@
 
 function square(x) {
   // TODO
+  return x ** 2
 }
 
 // TODO
-let cube;
+let cube = (x) => x ** 3;
 
 // export 를 수정하지 마세요.
 export { square, cube };

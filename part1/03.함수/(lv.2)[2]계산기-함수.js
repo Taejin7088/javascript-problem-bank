@@ -12,6 +12,8 @@
  */
 
 function calcTotal(price, quantity) {
+  quantity = quantity || 1
+  return price * quantity
   //Todo
 }
 
