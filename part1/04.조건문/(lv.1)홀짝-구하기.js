@@ -9,7 +9,7 @@
  */
 
 function isEvenOrOdd(num) {
-  // TODO
+  return (num % 2 === 0) ? "Even" : "Odd"
 }
 
 // export 를 수정하지 마세요.
