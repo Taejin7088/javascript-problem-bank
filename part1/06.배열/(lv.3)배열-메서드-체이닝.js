@@ -16,9 +16,7 @@
 
 function get20sEmail(arr) {
   return arr
-    .filter((a) => a.age < 30 && a.age >= 20)
-    .sort((a, b) => a.age - b.age)
-    .map((a) => a.email)
+    .filter((a) => a.age < 30 && a.age >= 20).sort((a, b) => a.age - b.age).map((a) => a.email)
   // TODO: 배열 메서드 체이닝을 사용해 20대 사람의 email 배열을 반환하세요.
 }
 

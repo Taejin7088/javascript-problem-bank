@@ -14,6 +14,5 @@ function squareElements(arr) {
     return num ** 2
   })
 }
-
 // export를 수정하지 마세요.
 export { squareElements };
