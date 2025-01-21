@@ -18,8 +18,6 @@ function sumUpTo(n) {
     i++
   }
   return sum
-
-
   // TODO: n이 1 이상이면 1부터 n까지의 합을 반환, 0 이하이면 0을 반환
 }
 
