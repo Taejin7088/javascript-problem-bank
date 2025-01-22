@@ -10,6 +10,12 @@
 
 function delay(ms) {
   // TODO: delay 함수를 작성하세요.
+  return new Promise((res) => {
+    setTimeout(() => {
+      res("done")
+    }, ms)
+  })
+
 }
 
 // export를 수정하지 마세요.
