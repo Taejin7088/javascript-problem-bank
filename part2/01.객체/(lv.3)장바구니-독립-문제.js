@@ -19,13 +19,17 @@ function fixCartReferenceIssue() {
   };
 
   // TODO: userBCart가 userACart와 독립된 복사본을 가지도록 해야 함
-  let userBCart;
+  const userBCart = structuredClone(userACart);
 
   const coupon = 5000;
 
   applyCoupon(userBCart, coupon);
+
+  console.log(" dasfas");
+
   function applyCoupon(cart, discount) {
     // TODO
+    cart.price -= discount;
   }
 
   return { userACart, userBCart };
