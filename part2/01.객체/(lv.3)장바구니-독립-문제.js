@@ -22,18 +22,18 @@ function fixCartReferenceIssue() {
   const userBCart = structuredClone(userACart);
 
   const coupon = 5000;
-
   applyCoupon(userBCart, coupon);
-
-  console.log(" dasfas");
-
   function applyCoupon(cart, discount) {
     // TODO
-    cart.price -= discount;
+    cart.items.forEach((ele) => {
+      ele.price -= discount;
+    });
   }
 
   return { userACart, userBCart };
 }
+
+fixCartReferenceIssue();
 
 // export를 수정하지 마세요.
 export { fixCartReferenceIssue };
