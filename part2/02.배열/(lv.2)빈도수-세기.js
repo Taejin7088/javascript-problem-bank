@@ -11,7 +11,17 @@
  */
 
 // TODO: 함수를 작성하세요.
-function getFrequency(arr) {}
+function getFrequency(arr) {
+  const resultObj = {};
+  arr.forEach((ele) => {
+    const count = arr.reduce((sum, target) => {
+      if (target === ele) return sum + 1;
+      return sum;
+    });
+    resultObj[ele] = count;
+  });
+  return resultObj;
+}
 
 // export 를 수정하지 마세요.
 export { getFrequency };

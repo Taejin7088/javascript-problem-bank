@@ -15,7 +15,19 @@
  */
 
 function createUserLogger() {
-  const userLogs = new Set();
+  const userLogs = new Map();
+  const recordUserAction = (userId, action) => {
+    if (!userLogs.has(userId)) {
+      userLogs.set(userId, new Set());
+    }
+    userLogs.get(userId).add(action);
+  };
+
+  const getUserActions = (userId) => {
+    return userLogs.has(userId) ? [...userLogs.get(userId)] : [];
+  };
+
+  return { recordUserAction, getUserActions };
 }
 
 // export 를 수정하지 마세요.
