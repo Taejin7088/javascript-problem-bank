@@ -18,7 +18,5 @@ function reverseString(str) {
   return tempStr;
 }
 
-console.log('reverseString("TEST")', reverseString("TEST"));
-
 // export 를 수정하지 마세요.
 export { reverseString };
