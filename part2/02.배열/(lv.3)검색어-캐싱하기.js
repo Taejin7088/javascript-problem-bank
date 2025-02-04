@@ -15,13 +15,32 @@
 
 let topKeywordsCache = [];
 
+const hash = new Map();
 function updateTopKeywords(keywords) {
   // TODO
+  hash.clear();
+  keywords.forEach((e) => {
+    if (hash.has(e)) {
+      hash.set(e, hash.get(e) + 1);
+    } else {
+      hash.set(e, 1);
+    }
+  });
 }
 
 function getTopKeywords() {
   // TODO
-  return [];
+  const totalKeywords = [];
+  for (const el of hash) {
+    totalKeywords.push(el);
+  }
+  totalKeywords.sort((a, b) => {
+    return b[1] - a[1];
+  });
+
+  const topTenKeywords = totalKeywords.slice(0, 10).map((e) => e[0]);
+
+  return topTenKeywords;
 }
 
 // export를 수정하지 마세요.
