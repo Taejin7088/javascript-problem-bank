@@ -37,9 +37,7 @@ function getTopKeywords() {
   totalKeywords.sort((a, b) => {
     return b[1] - a[1];
   });
-
   const topTenKeywords = totalKeywords.slice(0, 10).map((e) => e[0]);
-
   return topTenKeywords;
 }
 
