@@ -10,7 +10,29 @@
  * @returns {any[][]}
  */
 
-function chunkArray(arr, size) {}
+function chunkArray(arr, size) {
+  if (!arr.length) return [];
+  if (arr.length < size) return [arr];
+  const resultArr = [];
+  const repeatCount = parseInt(arr.length / size);
+  const remainingCount = parseInt(arr.length % size);
+  for (let i = 0; i < repeatCount; i++) {
+    const innerArr = [];
+    for (let j = 0; j < size; j++) {
+      innerArr.push(arr[0]);
+      arr.shift();
+    }
+    resultArr.push(innerArr);
+  }
+  if (remainingCount) {
+    const innerArr = [];
+    for (let i = 0; i < remainingCount; i++) {
+      innerArr.push(arr[0]);
+    }
+    resultArr.push(innerArr);
+  }
+  return resultArr;
+}
 
 // export 를 수정하지 마세요.
 export { chunkArray };
