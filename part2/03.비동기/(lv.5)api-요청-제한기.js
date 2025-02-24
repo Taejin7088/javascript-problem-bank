@@ -27,7 +27,36 @@
  * @returns {(fn: () => Promise<any>) => Promise<any>}
  */
 
-function createRateLimiter(maxRequests, timeWindow) {}
+function createRateLimiter(maxRequests, timeWindow) {
+  const apiArr = [];
+
+  const apiArrArr = [];
+
+  const apiCount = 0;
+
+  const apiArrIndex = 0;
+
+  const limitTimeOut = (fnc) => {
+    const apiArrIndex = apiCount / maxRequests;
+
+    apiArr[apiArrIndex].push(fnc);
+
+    setTimeout(() => {
+      apiArr[apiArrIndex].forEach((element) => {
+        element().then(() => {
+          apiArr[apiArrIndex].pop();
+          apiCount--;
+        });
+      });
+    }, timeWindow * apiArrIndex);
+  };
+
+  return (fnc) => {
+    //함수가 끝났으면 배열에서 하나씩 빼기 근데 어떻게빼지?
+    apiArrArr.push(fnc);
+    limitTimeOut(fnc);
+  };
+}
 
 // export 를 수정하지 마세요.
 export { createRateLimiter };
